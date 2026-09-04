@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Cinzel", serif;
+  --font-body: "Crimson Pro", Georgia, serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-slate-950 text-slate-200 font-body antialiased;
+  background-image:
+    radial-gradient(ellipse at 20% 0%, rgba(249, 115, 22, 0.06), transparent 50%),
+    radial-gradient(ellipse at 80% 20%, rgba(6, 182, 212, 0.06), transparent 50%),
+    radial-gradient(ellipse at 30% 80%, rgba(16, 185, 129, 0.06), transparent 50%),
+    radial-gradient(ellipse at 90% 90%, rgba(56, 189, 248, 0.05), transparent 50%);
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.08); }
+}
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes spin-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-pulse-glow { animation: pulse-glow 4s ease-in-out infinite; }
+.animate-fade-up { animation: fade-up 0.5s ease-out both; }
+.animate-spin-slow { animation: spin-slow 40s linear infinite; }
+
+.text-glow-orange { text-shadow: 0 0 24px rgba(249, 115, 22, 0.6); }
+.text-glow-cyan { text-shadow: 0 0 24px rgba(6, 182, 212, 0.6); }
+.text-glow-sky { text-shadow: 0 0 24px rgba(125, 211, 252, 0.6); }
+.text-glow-emerald { text-shadow: 0 0 24px rgba(16, 185, 129, 0.6); }
+
+.rune-divider {
+  background: linear-gradient(90deg, transparent, rgba(251, 191, 36, 0.5), transparent);
+  height: 1px;
+}
+
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: #020617; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 8px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
